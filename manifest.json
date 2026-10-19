@@ -1,24 +1,20 @@
 {
-    "manifest_version": 3,
-    "name": "API Data Fetcher",
-    "version": "1.0",
-    "description": "Fetches and displays data from multiple APIs",
-    "permissions": [
-      "alarms",
-      "storage"
-    ],
-    "host_permissions": [
-      "https://*/*"
-    ],
-    "background": {
-      "service_worker": "background.js",
-      "type": "module"
-    },
-    "action": {
-      "default_popup": "popup.html"
-    }
-  }
-  
-  
-  
-  
+  "manifest_version": 3,
+  "name": "API Data Fetcher",
+  "version": "2.0.0",
+  "description": "Shows a random user, a sample post and a trivia question from three public APIs, and keeps the last data when you are offline.",
+  "minimum_chrome_version": "116",
+  "permissions": ["alarms", "storage"],
+  "host_permissions": [
+    "https://randomuser.me/api/*",
+    "https://jsonplaceholder.typicode.com/posts/*",
+    "https://opentdb.com/api.php*"
+  ],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "API Data Fetcher",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

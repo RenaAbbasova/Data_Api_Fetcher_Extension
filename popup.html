@@ -1,112 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>API Data Fetcher</title>
-  <style>
-    body {
-      width: 400px;
-      padding: 16px;
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-
-    .api-data {
-      margin-bottom: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .api-header {
-      padding: 8px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #f5f5f5;
-    }
-
-    .api-header.success {
-      background-color: #e8f5e9;
-    }
-
-    .api-header.error {
-      background-color: #ffebee;
-    }
-
-    .api-header h2 {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .api-content {
-      padding: 16px;
-    }
-
-    pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      background-color: #f8f9fa;
-      padding: 8px;
-      border-radius: 4px;
-      margin: 0;
-      font-size: 12px;
-    }
-
-    .error-message {
-      color: #d32f2f;
-      margin-bottom: 8px;
-    }
-
-    .timestamp {
-      font-size: 12px;
-      color: #666;
-      margin-top: 8px;
-    }
-
-    .loading {
-      text-align: center;
-      padding: 20px;
-      color: #666;
-    }
-
-    .refresh-button {
-      display: block;
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 16px;
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .refresh-button:hover {
-      background-color: #1565c0;
-    }
-
-    .status {
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
-
-    .success .status {
-      background-color: #4caf50;
-      color: white;
-    }
-
-    .error .status {
-      background-color: #f44336;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
 </head>
 <body>
-  <h1>API Data Fetcher</h1>
-  <div id="api-container"></div>
-  <script src="popup.js"></script>
+  <main>
+    <h1>API Data Fetcher</h1>
+    <button id="refresh" class="refresh-button" type="button">Refresh data</button>
+    <p id="banner" class="banner" role="status" hidden></p>
+    <div id="api-container" aria-live="polite" aria-busy="true"></div>
+  </main>
 </body>
 </html>
-
-

@@ -1,0 +1,19 @@
+{
+  "name": "api-data-fetcher",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Chrome extension that shows data from three public APIs and keeps the last data when you are offline.",
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^16.0.0",
+    "jsdom": "^27.0.0",
+    "vitest": "5.0.5"
+  }
+}
